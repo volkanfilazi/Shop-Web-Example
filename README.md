@@ -1,4 +1,4 @@
-# Volkan Filazi CV Challange 1
+# Volkan Filazi Shop Web App
 
 ## How to install
 
