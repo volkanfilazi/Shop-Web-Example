@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <header class="w-full h-20 border-b-2 border-gray-300 justify-center flex items-center ">
+        <div class="w-full flex items-center justify-center gap-5 ">
+            <div class="w-[70%] h-10 bg-white flex justify-center items-center p-2 border-2 border-gray-400 rounded-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 1024 1024">
+                    <path fill="currentColor"
+                        d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1c-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z" />
+                </svg>
+                <input class="search-input w-full outline-none" type="text" placeholder="Search for your favorite food">
+            </div>
+            <div class="basket-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M22 9h-4.79l-4.39-6.57a1 1 0 0 0-1.66 0L6.77 9H2c-.55 0-1 .45-1 1c0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1zM11.99 4.79L14.8 9H9.18l2.81-4.21zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2z" />
+                </svg>
+
+                <span class="basket absolute z-10">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-[1200px] mx-auto px-10">
+        <div class="menu-list-main grid grid-flow-row md:grid-cols-2 grid-cols-1 md:gap-5 gap-2">
+
+        </div>
+        <div class="slide relative z-10 opacity-0 invisible" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+            <!--
+              Background backdrop, show/hide based on slide-over state.
+          
+              Entering: "ease-in-out duration-500"
+                From: "opacity-0"
+                To: "opacity-100"
+              Leaving: "ease-in-out duration-500"
+                From: "opacity-100"
+                To: "opacity-0"
+            -->
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+            <div class="fixed inset-0 overflow-hidden">
+                <div class="absolute inset-0 overflow-hidden">
+                    <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                        <!--
+                    Slide-over panel, show/hide based on slide-over state.
+          
+                    Entering: "transform transition ease-in-out duration-500 sm:duration-700"
+                      From: "translate-x-full"
+                      To: "translate-x-0"
+                    Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
+                      From: "translate-x-0"
+                      To: "translate-x-full"
+                  -->
+                        <div class="pointer-events-auto relative w-screen max-w-md">
+                            <!--
+                      Close button, show/hide based on slide-over state.
+          
+                      Entering: "ease-in-out duration-500"
+                        From: "opacity-0"
+                        To: "opacity-100"
+                      Leaving: "ease-in-out duration-500"
+                        From: "opacity-100"
+                        To: "opacity-0"
+                    -->
+                            <div class="absolute top-0 left-0 -ml-8 flex pt-4 pr-2 sm:-ml-10 sm:pr-4">
+                                <button type="button"
+                                    class="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
+                                    <span class="sr-only">Close panel</span>
+                                    <!-- Heroicon name: outline/x-mark -->
+                                    <svg class="close-button h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                                <div class="px-4 sm:px-6">
+                                    <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Panel title</h2>
+                                </div>
+                                <div class="relative mt-6 flex-1 px-4 sm:px-6">
+                                    <!-- Replace with your content -->
+                                    <div class="absolute inset-0 px-4 sm:px-6">
+                                        <div class="slide-container h-full border-2 border-dashed border-gray-200" aria-hidden="true">
+                                        </div>
+                                    </div>
+                                    <!-- /End replace -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
